@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 
 /**
  *
- * @author benja
+ * @author - GitCats
  */
+
+import javax.swing.*;
+import java.awt.event.*;
+
 public class PantallaCarga extends javax.swing.JFrame {
 
     /**
@@ -15,6 +15,19 @@ public class PantallaCarga extends javax.swing.JFrame {
      */
     public PantallaCarga() {
         initComponents();
+        initComponents();
+        // Iniciar el temporizador para mostrar la pantalla principal después de 5 segundos
+        Timer timer = new Timer(1250, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Al pasar 5 segundos, se cierra la pantalla de carga y se abre la ventana principal
+                setVisible(false);
+                Main main = new Main(); // Crear la ventana principal
+                main.setVisible(true); // Mostrar la ventana principal
+            }
+        });
+        timer.setRepeats(false); // Asegura que solo se ejecute una vez
+        timer.start(); // Inicia el temporizador
     }
 
     /**
@@ -26,17 +39,65 @@ public class PantallaCarga extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lbParking = new javax.swing.JLabel();
+        lbControl = new javax.swing.JLabel();
+        lbCreditos = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbParking.setFont(new java.awt.Font("Verdana", 1, 72)); // NOI18N
+        lbParking.setForeground(new java.awt.Color(235, 205, 33));
+        lbParking.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbParking.setText("Parking");
+
+        lbControl.setFont(new java.awt.Font("Verdana", 1, 72)); // NOI18N
+        lbControl.setForeground(new java.awt.Color(243, 225, 122));
+        lbControl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbControl.setText("Control");
+
+        lbCreditos.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        lbCreditos.setForeground(new java.awt.Color(30, 30, 30));
+        lbCreditos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbCreditos.setText("©GitCats - 2024");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(lbControl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbParking)
+                .addContainerGap(295, Short.MAX_VALUE))
+            .addComponent(lbCreditos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(355, 355, 355)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbParking)
+                    .addComponent(lbControl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addComponent(lbCreditos)
+                .addGap(82, 82, 82))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +139,9 @@ public class PantallaCarga extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbControl;
+    private javax.swing.JLabel lbCreditos;
+    private javax.swing.JLabel lbParking;
     // End of variables declaration//GEN-END:variables
 }
