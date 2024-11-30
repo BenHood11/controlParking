@@ -22,8 +22,8 @@ public class PantallaCarga extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Al pasar 5 segundos, se cierra la pantalla de carga y se abre la ventana principal
                 setVisible(false);
-                Main main = new Main(); // Crear la ventana principal
-                main.setVisible(true); // Mostrar la ventana principal
+                Menu menu = new Menu(); // Crear la ventana principal
+                menu.setVisible(true); // Mostrar la ventana principal
             }
         });
         timer.setRepeats(false); // Asegura que solo se ejecute una vez
