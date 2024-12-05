@@ -1,5 +1,7 @@
 package gui;
-
+import javax.swing.*;
+import java.awt.*;
+import java.io.InputStream;
 /**
  *
  * @author - GitCats
@@ -13,7 +15,23 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
     }
+    private void setFrameIcon() {
+        try {
+            // Cargar la fuente de Font Awesome
+            InputStream is = getClass().getResourceAsStream("/resources/fa-solid-900.ttf");
+            Font fontAwesome = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(18f); // Tamaño de fuente
+            
+            JLabel label = new JLabel("\uf013"); // Código Unicode para el ícono de engranaje (gear)
+            label.setFont(fontAwesome);
+            label.setForeground(Color.BLACK); // Color del ícono
 
+            // Agregar el JLabel al JFrame
+            this.add(label);
+            this.pack();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,168 +44,222 @@ public class Menu extends javax.swing.JFrame {
         JPBASEBOTONES = new javax.swing.JPanel();
         JPMENUBOTONES = new javax.swing.JPanel();
         JPBOTONINICIO = new javax.swing.JPanel();
-        jLabelINICIO = new javax.swing.JLabel();
+        JLBOTONINICIO = new javax.swing.JLabel();
         JPBOTONREGISTRO = new javax.swing.JPanel();
-        jLabelREGISTRO = new javax.swing.JLabel();
-        jLabelTITULOCPARKING = new javax.swing.JLabel();
+        JLBOTONREGISTRO = new javax.swing.JLabel();
         JPBOTONHISTORIAL = new javax.swing.JPanel();
-        jLabelHISTORIAL = new javax.swing.JLabel();
+        JLBOTONHISTORIAL = new javax.swing.JLabel();
         JPBOTONREPORTE = new javax.swing.JPanel();
-        jLabelREPORTE = new javax.swing.JLabel();
+        JLBOTONREPORTE = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabelTITULOCPARKING2 = new javax.swing.JLabel();
         JPBOTONCONFIGURACION = new javax.swing.JPanel();
-        jLabelCONFIGURACION = new javax.swing.JLabel();
+        JLBOTONCONFIGURACION = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         JPSUBMENUBOTONES = new javax.swing.JPanel();
-        JPBOTONINICIO1 = new javax.swing.JPanel();
-        jLabelINICIO1 = new javax.swing.JLabel();
-        JPBOTONREGISTRO1 = new javax.swing.JPanel();
-        jLabelREGISTRO1 = new javax.swing.JLabel();
-        JPBOTONHISTORIAL1 = new javax.swing.JPanel();
-        jLabelHISTORIAL1 = new javax.swing.JLabel();
-        JPBOTONREPORTE1 = new javax.swing.JPanel();
-        jLabelREPORTE1 = new javax.swing.JLabel();
-        JPBOTONCONFIGURACION1 = new javax.swing.JPanel();
-        jLabelCONFIGURACION1 = new javax.swing.JLabel();
-        jLabelTITULOCPARKING1 = new javax.swing.JLabel();
-        JPBOTONREGISTRO2 = new javax.swing.JPanel();
-        jLabelREGISTRO2 = new javax.swing.JLabel();
-        JPBOTONREGISTRO3 = new javax.swing.JPanel();
-        jLabelREGISTRO3 = new javax.swing.JLabel();
+        jLabelTITULOCPARKING3 = new javax.swing.JLabel();
+        JPSUBBOTONINICIO = new javax.swing.JPanel();
+        JLSUBBOTONINICIO = new javax.swing.JLabel();
+        JPSUBBOTONREGISTRO = new javax.swing.JPanel();
+        JLSUBBOTONREGISTRO = new javax.swing.JLabel();
+        JPSUBBOTONHISTORIAL = new javax.swing.JPanel();
+        JLSUBBOTONHISTORIAL = new javax.swing.JLabel();
+        JPSUBBOTONREPORTE = new javax.swing.JPanel();
+        JLSUBBOTONREPORTE = new javax.swing.JLabel();
+        JPSUBBOTONCONFIGURACION = new javax.swing.JPanel();
+        JLSUBBOTONCONFIGURACION = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        JPBOTONREGISTROENTRADA = new javax.swing.JPanel();
+        JLSUBBOTONREGISTRO1 = new javax.swing.JLabel();
+        JPBOTONREGISTROSALIDA = new javax.swing.JPanel();
+        JLSUBBOTONREGISTRO3 = new javax.swing.JLabel();
         JPBASEINTERFAZ = new javax.swing.JPanel();
-        JPINICIO = new javax.swing.JPanel();
-        JLTITULOINICIO = new javax.swing.JLabel();
-        JPREGISTROENTRADA = new javax.swing.JPanel();
-        JLTITULOREGISTROENTRADA = new javax.swing.JLabel();
-        JPREGISTROSALIDA = new javax.swing.JPanel();
-        JLTITULOREGISTROSALIDA = new javax.swing.JLabel();
-        JPHISTORIAL = new javax.swing.JPanel();
-        JLTITULOHISTORIAL = new javax.swing.JLabel();
-        JPREPORTE = new javax.swing.JPanel();
-        JLTITULOREPORTE = new javax.swing.JLabel();
         JPCONFIGURACION = new javax.swing.JPanel();
-        JLTITULOCONFIGURACION = new javax.swing.JLabel();
+        JPREGISTROENTRADA = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        panelRound17 = new gui.PanelRound();
+        panelRound18 = new gui.PanelRound();
+        panelRound21 = new gui.PanelRound();
+        panelRound22 = new gui.PanelRound();
+        panelRound23 = new gui.PanelRound();
+        panelRound24 = new gui.PanelRound();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        JPREGISTROSALIDA = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        panelRound11 = new gui.PanelRound();
+        panelRound12 = new gui.PanelRound();
+        panelRound13 = new gui.PanelRound();
+        panelRound14 = new gui.PanelRound();
+        panelRound15 = new gui.PanelRound();
+        panelRound16 = new gui.PanelRound();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        JPHISTORIAL = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JPREPORTE = new javax.swing.JPanel();
+        panelRound19 = new gui.PanelRound();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        panelRound20 = new gui.PanelRound();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        JPINICIO = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        panelRound1 = new gui.PanelRound();
+        jLabel1 = new javax.swing.JLabel();
+        panelRound2 = new gui.PanelRound();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        panelRound7 = new gui.PanelRound();
+        jLabel3 = new javax.swing.JLabel();
+        panelRound6 = new gui.PanelRound();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(240, 240, 240));
+        setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        JPBASEBOTONES.setBackground(new java.awt.Color(255, 204, 0));
+        JPBASEBOTONES.setForeground(new java.awt.Color(204, 0, 0));
+
         JPMENUBOTONES.setBackground(new java.awt.Color(255, 255, 255));
+        JPMENUBOTONES.setPreferredSize(new java.awt.Dimension(300, 800));
+        JPMENUBOTONES.setRequestFocusEnabled(false);
 
         JPBOTONINICIO.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONINICIO.setPreferredSize(new java.awt.Dimension(300, 60));
         JPBOTONINICIO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBOTONINICIOMouseClicked(evt);
             }
         });
 
-        jLabelINICIO.setBackground(new java.awt.Color(248, 238, 55));
-        jLabelINICIO.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelINICIO.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelINICIO.setText("Inicio");
+        JLBOTONINICIO.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLBOTONINICIO.setForeground(new java.awt.Color(0, 0, 0));
+        JLBOTONINICIO.setText("Inicio");
 
         javax.swing.GroupLayout JPBOTONINICIOLayout = new javax.swing.GroupLayout(JPBOTONINICIO);
         JPBOTONINICIO.setLayout(JPBOTONINICIOLayout);
         JPBOTONINICIOLayout.setHorizontalGroup(
             JPBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPBOTONINICIOLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabelINICIO)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addComponent(JLBOTONINICIO)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPBOTONINICIOLayout.setVerticalGroup(
             JPBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONINICIOLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONINICIOLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelINICIO)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JLBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         JPBOTONREGISTRO.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONREGISTRO.setPreferredSize(new java.awt.Dimension(300, 60));
         JPBOTONREGISTRO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBOTONREGISTROMouseClicked(evt);
             }
         });
 
-        jLabelREGISTRO.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelREGISTRO.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREGISTRO.setText("Registro");
+        JLBOTONREGISTRO.setBackground(new java.awt.Color(0, 0, 0));
+        JLBOTONREGISTRO.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLBOTONREGISTRO.setForeground(new java.awt.Color(0, 0, 0));
+        JLBOTONREGISTRO.setText("Registro");
 
         javax.swing.GroupLayout JPBOTONREGISTROLayout = new javax.swing.GroupLayout(JPBOTONREGISTRO);
         JPBOTONREGISTRO.setLayout(JPBOTONREGISTROLayout);
         JPBOTONREGISTROLayout.setHorizontalGroup(
             JPBOTONREGISTROLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPBOTONREGISTROLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREGISTRO)
+                .addGap(65, 65, 65)
+                .addComponent(JLBOTONREGISTRO)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPBOTONREGISTROLayout.setVerticalGroup(
             JPBOTONREGISTROLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONREGISTROLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelREGISTRO)
+                .addContainerGap()
+                .addComponent(JLBOTONREGISTRO, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jLabelTITULOCPARKING.setFont(new java.awt.Font("Consolas", 1, 32)); // NOI18N
-        jLabelTITULOCPARKING.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelTITULOCPARKING.setText("CParking");
-
         JPBOTONHISTORIAL.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONHISTORIAL.setPreferredSize(new java.awt.Dimension(300, 60));
         JPBOTONHISTORIAL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBOTONHISTORIALMouseClicked(evt);
             }
         });
 
-        jLabelHISTORIAL.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelHISTORIAL.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelHISTORIAL.setText("Historial");
+        JLBOTONHISTORIAL.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLBOTONHISTORIAL.setForeground(new java.awt.Color(0, 0, 0));
+        JLBOTONHISTORIAL.setText("Historial");
 
         javax.swing.GroupLayout JPBOTONHISTORIALLayout = new javax.swing.GroupLayout(JPBOTONHISTORIAL);
         JPBOTONHISTORIAL.setLayout(JPBOTONHISTORIALLayout);
         JPBOTONHISTORIALLayout.setHorizontalGroup(
             JPBOTONHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPBOTONHISTORIALLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelHISTORIAL)
+                .addGap(65, 65, 65)
+                .addComponent(JLBOTONHISTORIAL)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPBOTONHISTORIALLayout.setVerticalGroup(
             JPBOTONHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONHISTORIALLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONHISTORIALLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelHISTORIAL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JLBOTONHISTORIAL, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         JPBOTONREPORTE.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONREPORTE.setPreferredSize(new java.awt.Dimension(300, 60));
         JPBOTONREPORTE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JPBOTONREPORTEMouseClicked(evt);
             }
         });
 
-        jLabelREPORTE.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelREPORTE.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREPORTE.setText("Reporte");
+        JLBOTONREPORTE.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLBOTONREPORTE.setForeground(new java.awt.Color(0, 0, 0));
+        JLBOTONREPORTE.setText("Reporte");
 
         javax.swing.GroupLayout JPBOTONREPORTELayout = new javax.swing.GroupLayout(JPBOTONREPORTE);
         JPBOTONREPORTE.setLayout(JPBOTONREPORTELayout);
         JPBOTONREPORTELayout.setHorizontalGroup(
             JPBOTONREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPBOTONREPORTELayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREPORTE)
+                .addGap(65, 65, 65)
+                .addComponent(JLBOTONREPORTE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPBOTONREPORTELayout.setVerticalGroup(
             JPBOTONREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREPORTELayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONREPORTELayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelREPORTE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JLBOTONREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jLabelTITULOCPARKING2.setFont(new java.awt.Font("Consolas", 1, 32)); // NOI18N
+        jLabelTITULOCPARKING2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTITULOCPARKING2.setText("CParking");
 
         JPBOTONCONFIGURACION.setBackground(new java.awt.Color(255, 255, 255));
         JPBOTONCONFIGURACION.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,24 +268,24 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabelCONFIGURACION.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelCONFIGURACION.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelCONFIGURACION.setText("Configuración");
+        JLBOTONCONFIGURACION.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLBOTONCONFIGURACION.setForeground(new java.awt.Color(0, 0, 0));
+        JLBOTONCONFIGURACION.setText("Configuración");
 
         javax.swing.GroupLayout JPBOTONCONFIGURACIONLayout = new javax.swing.GroupLayout(JPBOTONCONFIGURACION);
         JPBOTONCONFIGURACION.setLayout(JPBOTONCONFIGURACIONLayout);
         JPBOTONCONFIGURACIONLayout.setHorizontalGroup(
             JPBOTONCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONCONFIGURACIONLayout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(jLabelCONFIGURACION)
-                .addGap(47, 47, 47))
+            .addGroup(JPBOTONCONFIGURACIONLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(JLBOTONCONFIGURACION)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         JPBOTONCONFIGURACIONLayout.setVerticalGroup(
             JPBOTONCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONCONFIGURACIONLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelCONFIGURACION)
+                .addContainerGap()
+                .addComponent(JLBOTONCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -223,20 +295,31 @@ public class Menu extends javax.swing.JFrame {
             JPMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(JPBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(JPBOTONREGISTRO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(JPMENUBOTONESLayout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jLabelTITULOCPARKING)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(JPBOTONHISTORIAL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(JPBOTONREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(JPBOTONCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JPMENUBOTONESLayout.createSequentialGroup()
+                .addGroup(JPMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPMENUBOTONESLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabelTITULOCPARKING2))
+                    .addGroup(JPMENUBOTONESLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPMENUBOTONESLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         JPMENUBOTONESLayout.setVerticalGroup(
             JPMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPMENUBOTONESLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTITULOCPARKING)
-                .addGap(247, 247, 247)
+                .addGap(30, 30, 30)
+                .addComponent(jLabelTITULOCPARKING2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(JPBOTONINICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JPBOTONREGISTRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,246 +327,262 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(JPBOTONHISTORIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JPBOTONREPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
-                .addComponent(JPBOTONCONFIGURACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JPBOTONCONFIGURACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        JPBOTONINICIO1.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONINICIO1.addMouseListener(new java.awt.event.MouseAdapter() {
+        JPSUBMENUBOTONES.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBMENUBOTONES.setPreferredSize(new java.awt.Dimension(300, 800));
+
+        jLabelTITULOCPARKING3.setFont(new java.awt.Font("Consolas", 1, 32)); // NOI18N
+        jLabelTITULOCPARKING3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTITULOCPARKING3.setText("CParking");
+
+        JPSUBBOTONINICIO.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBBOTONINICIO.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPSUBBOTONINICIO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONINICIO1MouseClicked(evt);
+                JPSUBBOTONINICIOMouseClicked(evt);
             }
         });
 
-        jLabelINICIO1.setBackground(new java.awt.Color(248, 238, 55));
-        jLabelINICIO1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelINICIO1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelINICIO1.setText("Inicio");
+        JLSUBBOTONINICIO.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLSUBBOTONINICIO.setText("Inicio");
 
-        javax.swing.GroupLayout JPBOTONINICIO1Layout = new javax.swing.GroupLayout(JPBOTONINICIO1);
-        JPBOTONINICIO1.setLayout(JPBOTONINICIO1Layout);
-        JPBOTONINICIO1Layout.setHorizontalGroup(
-            JPBOTONINICIO1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONINICIO1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabelINICIO1)
-                .addContainerGap(174, Short.MAX_VALUE))
+        javax.swing.GroupLayout JPSUBBOTONINICIOLayout = new javax.swing.GroupLayout(JPSUBBOTONINICIO);
+        JPSUBBOTONINICIO.setLayout(JPSUBBOTONINICIOLayout);
+        JPSUBBOTONINICIOLayout.setHorizontalGroup(
+            JPSUBBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSUBBOTONINICIOLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(JLSUBBOTONINICIO)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPBOTONINICIO1Layout.setVerticalGroup(
-            JPBOTONINICIO1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONINICIO1Layout.createSequentialGroup()
+        JPSUBBOTONINICIOLayout.setVerticalGroup(
+            JPSUBBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBBOTONINICIOLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelINICIO1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        JPBOTONREGISTRO1.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONREGISTRO1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONREGISTRO1MouseClicked(evt);
-            }
-        });
-
-        jLabelREGISTRO1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelREGISTRO1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREGISTRO1.setText("Registro");
-
-        javax.swing.GroupLayout JPBOTONREGISTRO1Layout = new javax.swing.GroupLayout(JPBOTONREGISTRO1);
-        JPBOTONREGISTRO1.setLayout(JPBOTONREGISTRO1Layout);
-        JPBOTONREGISTRO1Layout.setHorizontalGroup(
-            JPBOTONREGISTRO1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREGISTRO1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREGISTRO1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        JPBOTONREGISTRO1Layout.setVerticalGroup(
-            JPBOTONREGISTRO1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONREGISTRO1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelREGISTRO1)
+                .addComponent(JLSUBBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        JPBOTONHISTORIAL1.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONHISTORIAL1.addMouseListener(new java.awt.event.MouseAdapter() {
+        JPSUBBOTONREGISTRO.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBBOTONREGISTRO.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPSUBBOTONREGISTRO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONHISTORIAL1MouseClicked(evt);
+                JPSUBBOTONREGISTROMouseClicked(evt);
             }
         });
 
-        jLabelHISTORIAL1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelHISTORIAL1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelHISTORIAL1.setText("Historial");
+        JLSUBBOTONREGISTRO.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLSUBBOTONREGISTRO.setText("Registro");
 
-        javax.swing.GroupLayout JPBOTONHISTORIAL1Layout = new javax.swing.GroupLayout(JPBOTONHISTORIAL1);
-        JPBOTONHISTORIAL1.setLayout(JPBOTONHISTORIAL1Layout);
-        JPBOTONHISTORIAL1Layout.setHorizontalGroup(
-            JPBOTONHISTORIAL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONHISTORIAL1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelHISTORIAL1)
+        javax.swing.GroupLayout JPSUBBOTONREGISTROLayout = new javax.swing.GroupLayout(JPSUBBOTONREGISTRO);
+        JPSUBBOTONREGISTRO.setLayout(JPSUBBOTONREGISTROLayout);
+        JPSUBBOTONREGISTROLayout.setHorizontalGroup(
+            JPSUBBOTONREGISTROLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSUBBOTONREGISTROLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(JLSUBBOTONREGISTRO)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPBOTONHISTORIAL1Layout.setVerticalGroup(
-            JPBOTONHISTORIAL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONHISTORIAL1Layout.createSequentialGroup()
+        JPSUBBOTONREGISTROLayout.setVerticalGroup(
+            JPSUBBOTONREGISTROLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBBOTONREGISTROLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelHISTORIAL1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JLSUBBOTONREGISTRO, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        JPBOTONREPORTE1.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONREPORTE1.addMouseListener(new java.awt.event.MouseAdapter() {
+        JPSUBBOTONHISTORIAL.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBBOTONHISTORIAL.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPSUBBOTONHISTORIAL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONREPORTE1MouseClicked(evt);
+                JPSUBBOTONHISTORIALMouseClicked(evt);
             }
         });
 
-        jLabelREPORTE1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelREPORTE1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREPORTE1.setText("Reporte");
+        JLSUBBOTONHISTORIAL.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLSUBBOTONHISTORIAL.setText("Historial");
 
-        javax.swing.GroupLayout JPBOTONREPORTE1Layout = new javax.swing.GroupLayout(JPBOTONREPORTE1);
-        JPBOTONREPORTE1.setLayout(JPBOTONREPORTE1Layout);
-        JPBOTONREPORTE1Layout.setHorizontalGroup(
-            JPBOTONREPORTE1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREPORTE1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREPORTE1)
+        javax.swing.GroupLayout JPSUBBOTONHISTORIALLayout = new javax.swing.GroupLayout(JPSUBBOTONHISTORIAL);
+        JPSUBBOTONHISTORIAL.setLayout(JPSUBBOTONHISTORIALLayout);
+        JPSUBBOTONHISTORIALLayout.setHorizontalGroup(
+            JPSUBBOTONHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSUBBOTONHISTORIALLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(JLSUBBOTONHISTORIAL)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPBOTONREPORTE1Layout.setVerticalGroup(
-            JPBOTONREPORTE1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREPORTE1Layout.createSequentialGroup()
+        JPSUBBOTONHISTORIALLayout.setVerticalGroup(
+            JPSUBBOTONHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBBOTONHISTORIALLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelREPORTE1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        JPBOTONCONFIGURACION1.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONCONFIGURACION1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONCONFIGURACION1MouseClicked(evt);
-            }
-        });
-
-        jLabelCONFIGURACION1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabelCONFIGURACION1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelCONFIGURACION1.setText("Configuración");
-
-        javax.swing.GroupLayout JPBOTONCONFIGURACION1Layout = new javax.swing.GroupLayout(JPBOTONCONFIGURACION1);
-        JPBOTONCONFIGURACION1.setLayout(JPBOTONCONFIGURACION1Layout);
-        JPBOTONCONFIGURACION1Layout.setHorizontalGroup(
-            JPBOTONCONFIGURACION1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONCONFIGURACION1Layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(jLabelCONFIGURACION1)
-                .addGap(47, 47, 47))
-        );
-        JPBOTONCONFIGURACION1Layout.setVerticalGroup(
-            JPBOTONCONFIGURACION1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONCONFIGURACION1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelCONFIGURACION1)
+                .addComponent(JLSUBBOTONHISTORIAL, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jLabelTITULOCPARKING1.setFont(new java.awt.Font("Consolas", 1, 32)); // NOI18N
-        jLabelTITULOCPARKING1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelTITULOCPARKING1.setText("CParking");
-
-        JPBOTONREGISTRO2.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONREGISTRO2.addMouseListener(new java.awt.event.MouseAdapter() {
+        JPSUBBOTONREPORTE.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBBOTONREPORTE.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPSUBBOTONREPORTE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONREGISTRO2MouseClicked(evt);
+                JPSUBBOTONREPORTEMouseClicked(evt);
             }
         });
 
-        jLabelREGISTRO2.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        jLabelREGISTRO2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREGISTRO2.setText("Registro Salida");
+        JLSUBBOTONREPORTE.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLSUBBOTONREPORTE.setText("Reporte");
 
-        javax.swing.GroupLayout JPBOTONREGISTRO2Layout = new javax.swing.GroupLayout(JPBOTONREGISTRO2);
-        JPBOTONREGISTRO2.setLayout(JPBOTONREGISTRO2Layout);
-        JPBOTONREGISTRO2Layout.setHorizontalGroup(
-            JPBOTONREGISTRO2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREGISTRO2Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREGISTRO2)
+        javax.swing.GroupLayout JPSUBBOTONREPORTELayout = new javax.swing.GroupLayout(JPSUBBOTONREPORTE);
+        JPSUBBOTONREPORTE.setLayout(JPSUBBOTONREPORTELayout);
+        JPSUBBOTONREPORTELayout.setHorizontalGroup(
+            JPSUBBOTONREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSUBBOTONREPORTELayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(JLSUBBOTONREPORTE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPBOTONREGISTRO2Layout.setVerticalGroup(
-            JPBOTONREGISTRO2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONREGISTRO2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelREGISTRO2)
+        JPSUBBOTONREPORTELayout.setVerticalGroup(
+            JPSUBBOTONREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBBOTONREPORTELayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JLSUBBOTONREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        JPBOTONREGISTRO3.setBackground(new java.awt.Color(255, 255, 255));
-        JPBOTONREGISTRO3.addMouseListener(new java.awt.event.MouseAdapter() {
+        JPSUBBOTONCONFIGURACION.setBackground(new java.awt.Color(255, 255, 255));
+        JPSUBBOTONCONFIGURACION.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JPBOTONREGISTRO3MouseClicked(evt);
+                JPSUBBOTONCONFIGURACIONMouseClicked(evt);
             }
         });
 
-        jLabelREGISTRO3.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        jLabelREGISTRO3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelREGISTRO3.setText("Registro Entrada");
+        JLSUBBOTONCONFIGURACION.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        JLSUBBOTONCONFIGURACION.setText("Configuración");
 
-        javax.swing.GroupLayout JPBOTONREGISTRO3Layout = new javax.swing.GroupLayout(JPBOTONREGISTRO3);
-        JPBOTONREGISTRO3.setLayout(JPBOTONREGISTRO3Layout);
-        JPBOTONREGISTRO3Layout.setHorizontalGroup(
-            JPBOTONREGISTRO3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPBOTONREGISTRO3Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabelREGISTRO3)
+        javax.swing.GroupLayout JPSUBBOTONCONFIGURACIONLayout = new javax.swing.GroupLayout(JPSUBBOTONCONFIGURACION);
+        JPSUBBOTONCONFIGURACION.setLayout(JPSUBBOTONCONFIGURACIONLayout);
+        JPSUBBOTONCONFIGURACIONLayout.setHorizontalGroup(
+            JPSUBBOTONCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSUBBOTONCONFIGURACIONLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(JLSUBBOTONCONFIGURACION)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        JPSUBBOTONCONFIGURACIONLayout.setVerticalGroup(
+            JPSUBBOTONCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBBOTONCONFIGURACIONLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JLSUBBOTONCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        JPBOTONREGISTROENTRADA.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONREGISTROENTRADA.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPBOTONREGISTROENTRADA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBOTONREGISTROENTRADAMouseClicked(evt);
+            }
+        });
+
+        JLSUBBOTONREGISTRO1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        JLSUBBOTONREGISTRO1.setText("Registro Entrada");
+        JLSUBBOTONREGISTRO1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JLSUBBOTONREGISTRO1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JPBOTONREGISTROENTRADALayout = new javax.swing.GroupLayout(JPBOTONREGISTROENTRADA);
+        JPBOTONREGISTROENTRADA.setLayout(JPBOTONREGISTROENTRADALayout);
+        JPBOTONREGISTROENTRADALayout.setHorizontalGroup(
+            JPBOTONREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPBOTONREGISTROENTRADALayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(JLSUBBOTONREGISTRO1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        JPBOTONREGISTRO3Layout.setVerticalGroup(
-            JPBOTONREGISTRO3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONREGISTRO3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelREGISTRO3)
-                .addContainerGap())
+        JPBOTONREGISTROENTRADALayout.setVerticalGroup(
+            JPBOTONREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JLSUBBOTONREGISTRO1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        );
+
+        JPBOTONREGISTROSALIDA.setBackground(new java.awt.Color(255, 255, 255));
+        JPBOTONREGISTROSALIDA.setPreferredSize(new java.awt.Dimension(300, 60));
+        JPBOTONREGISTROSALIDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JPBOTONREGISTROSALIDAMouseClicked(evt);
+            }
+        });
+
+        JLSUBBOTONREGISTRO3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        JLSUBBOTONREGISTRO3.setText("Registro Salida");
+
+        javax.swing.GroupLayout JPBOTONREGISTROSALIDALayout = new javax.swing.GroupLayout(JPBOTONREGISTROSALIDA);
+        JPBOTONREGISTROSALIDA.setLayout(JPBOTONREGISTROSALIDALayout);
+        JPBOTONREGISTROSALIDALayout.setHorizontalGroup(
+            JPBOTONREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPBOTONREGISTROSALIDALayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(JLSUBBOTONREGISTRO3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        JPBOTONREGISTROSALIDALayout.setVerticalGroup(
+            JPBOTONREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JLSUBBOTONREGISTRO3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout JPSUBMENUBOTONESLayout = new javax.swing.GroupLayout(JPSUBMENUBOTONES);
         JPSUBMENUBOTONES.setLayout(JPSUBMENUBOTONESLayout);
         JPSUBMENUBOTONESLayout.setHorizontalGroup(
             JPSUBMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPBOTONINICIO1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPBOTONREGISTRO1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPBOTONHISTORIAL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPBOTONREPORTE1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPBOTONCONFIGURACION1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSUBMENUBOTONESLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelTITULOCPARKING1)
-                .addGap(70, 70, 70))
-            .addComponent(JPBOTONREGISTRO2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(JPBOTONREGISTRO3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPSUBBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPSUBBOTONREGISTRO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPSUBBOTONHISTORIAL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPSUBBOTONREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPSUBBOTONCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JPSUBMENUBOTONESLayout.createSequentialGroup()
+                .addGroup(JPSUBMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPSUBMENUBOTONESLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabelTITULOCPARKING3))
+                    .addGroup(JPSUBMENUBOTONESLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPSUBMENUBOTONESLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(JPBOTONREGISTROENTRADA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPBOTONREGISTROSALIDA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JPSUBMENUBOTONESLayout.setVerticalGroup(
             JPSUBMENUBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPSUBMENUBOTONESLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTITULOCPARKING1)
-                .addGap(228, 228, 228)
-                .addComponent(JPBOTONINICIO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabelTITULOCPARKING3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(JPSUBBOTONINICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBOTONREGISTRO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPSUBBOTONREGISTRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(JPBOTONREGISTROENTRADA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBOTONREGISTRO3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPBOTONREGISTROSALIDA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBOTONREGISTRO2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPSUBBOTONHISTORIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBOTONHISTORIAL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPSUBBOTONREPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBOTONREPORTE1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                .addComponent(JPBOTONCONFIGURACION1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(JPSUBBOTONCONFIGURACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout JPBASEBOTONESLayout = new javax.swing.GroupLayout(JPBASEBOTONES);
@@ -498,164 +597,776 @@ public class Menu extends javax.swing.JFrame {
             JPBASEBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(JPMENUBOTONES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(JPBASEBOTONESLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JPSUBMENUBOTONES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JPSUBMENUBOTONES, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JLTITULOINICIO.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOINICIO.setText("¡Bienvenidos a Control Parking!");
+        JPBASEINTERFAZ.setBackground(new java.awt.Color(51, 0, 255));
 
-        javax.swing.GroupLayout JPINICIOLayout = new javax.swing.GroupLayout(JPINICIO);
-        JPINICIO.setLayout(JPINICIOLayout);
-        JPINICIOLayout.setHorizontalGroup(
-            JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPINICIOLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOINICIO)
-                .addContainerGap(149, Short.MAX_VALUE))
+        JPCONFIGURACION.setBackground(new java.awt.Color(240, 240, 240));
+        JPCONFIGURACION.setPreferredSize(new java.awt.Dimension(894, 800));
+
+        javax.swing.GroupLayout JPCONFIGURACIONLayout = new javax.swing.GroupLayout(JPCONFIGURACION);
+        JPCONFIGURACION.setLayout(JPCONFIGURACIONLayout);
+        JPCONFIGURACIONLayout.setHorizontalGroup(
+            JPCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 894, Short.MAX_VALUE)
         );
-        JPINICIOLayout.setVerticalGroup(
-            JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPINICIOLayout.createSequentialGroup()
+        JPCONFIGURACIONLayout.setVerticalGroup(
+            JPCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+
+        JPREGISTROENTRADA.setBackground(new java.awt.Color(240, 240, 240));
+
+        jLabel18.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Registro de Entrada");
+
+        jLabel24.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Propietario");
+
+        jLabel30.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Categoria");
+
+        jLabel31.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Marca");
+
+        jLabel32.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setText("Categoria");
+
+        panelRound17.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound17.setRoundBottomLeft(5);
+        panelRound17.setRoundBottomRight(5);
+        panelRound17.setRoundTopLeft(5);
+        panelRound17.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound17Layout = new javax.swing.GroupLayout(panelRound17);
+        panelRound17.setLayout(panelRound17Layout);
+        panelRound17Layout.setHorizontalGroup(
+            panelRound17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelRound17Layout.setVerticalGroup(
+            panelRound17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound18.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound18.setRoundBottomLeft(5);
+        panelRound18.setRoundBottomRight(5);
+        panelRound18.setRoundTopLeft(5);
+        panelRound18.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound18Layout = new javax.swing.GroupLayout(panelRound18);
+        panelRound18.setLayout(panelRound18Layout);
+        panelRound18Layout.setHorizontalGroup(
+            panelRound18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelRound18Layout.setVerticalGroup(
+            panelRound18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound21.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound21.setRoundBottomLeft(5);
+        panelRound21.setRoundBottomRight(5);
+        panelRound21.setRoundTopLeft(5);
+        panelRound21.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound21Layout = new javax.swing.GroupLayout(panelRound21);
+        panelRound21.setLayout(panelRound21Layout);
+        panelRound21Layout.setHorizontalGroup(
+            panelRound21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound21Layout.setVerticalGroup(
+            panelRound21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound22.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound22.setRoundBottomLeft(5);
+        panelRound22.setRoundBottomRight(5);
+        panelRound22.setRoundTopLeft(5);
+        panelRound22.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound22Layout = new javax.swing.GroupLayout(panelRound22);
+        panelRound22.setLayout(panelRound22Layout);
+        panelRound22Layout.setHorizontalGroup(
+            panelRound22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound22Layout.setVerticalGroup(
+            panelRound22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound23.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound23.setRoundBottomLeft(5);
+        panelRound23.setRoundBottomRight(5);
+        panelRound23.setRoundTopLeft(5);
+        panelRound23.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound23Layout = new javax.swing.GroupLayout(panelRound23);
+        panelRound23.setLayout(panelRound23Layout);
+        panelRound23Layout.setHorizontalGroup(
+            panelRound23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound23Layout.setVerticalGroup(
+            panelRound23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound24.setBackground(new java.awt.Color(243, 225, 122));
+        panelRound24.setRoundBottomLeft(5);
+        panelRound24.setRoundBottomRight(5);
+        panelRound24.setRoundTopLeft(5);
+        panelRound24.setRoundTopRight(5);
+
+        jLabel33.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel33.setText("Registrar");
+
+        javax.swing.GroupLayout panelRound24Layout = new javax.swing.GroupLayout(panelRound24);
+        panelRound24.setLayout(panelRound24Layout);
+        panelRound24Layout.setHorizontalGroup(
+            panelRound24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JLTITULOINICIO)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addComponent(jLabel33)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelRound24Layout.setVerticalGroup(
+            panelRound24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JPREGISTROENTRADA.setBackground(new java.awt.Color(255, 255, 0));
-
-        JLTITULOREGISTROENTRADA.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOREGISTROENTRADA.setText("¡Bienvenidos a Control Parking!");
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Placa");
 
         javax.swing.GroupLayout JPREGISTROENTRADALayout = new javax.swing.GroupLayout(JPREGISTROENTRADA);
         JPREGISTROENTRADA.setLayout(JPREGISTROENTRADALayout);
         JPREGISTROENTRADALayout.setHorizontalGroup(
             JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOREGISTROENTRADA)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(85, 85, 85)
+                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(panelRound17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel30)
+                                        .addComponent(panelRound22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel32)
+                                    .addComponent(jLabel12))
+                                .addGap(83, 83, 83)
+                                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24)
+                                    .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel31)
+                                        .addComponent(panelRound18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(panelRound21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(92, 92, Short.MAX_VALUE))
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addComponent(panelRound23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelRound24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160))))
         );
         JPREGISTROENTRADALayout.setVerticalGroup(
             JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLTITULOREGISTROENTRADA)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel18)
+                .addGap(37, 37, 37)
+                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelRound18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 49, 49)
+                .addComponent(jLabel32)
+                .addGroup(JPREGISTROENTRADALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(panelRound23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPREGISTROENTRADALayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(panelRound24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
-        JLTITULOREGISTROSALIDA.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOREGISTROSALIDA.setText("¡Bienvenidos a Control Parking!");
+        JPREGISTROSALIDA.setBackground(new java.awt.Color(240, 240, 240));
+
+        jLabel17.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Registro de Salida");
+
+        jLabel19.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Propietario");
+
+        jLabel20.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Categoria");
+
+        jLabel21.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Marca");
+
+        jLabel22.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Categoria");
+
+        panelRound11.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound11.setRoundBottomLeft(5);
+        panelRound11.setRoundBottomRight(5);
+        panelRound11.setRoundTopLeft(5);
+        panelRound11.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound11Layout = new javax.swing.GroupLayout(panelRound11);
+        panelRound11.setLayout(panelRound11Layout);
+        panelRound11Layout.setHorizontalGroup(
+            panelRound11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelRound11Layout.setVerticalGroup(
+            panelRound11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound12.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound12.setRoundBottomLeft(5);
+        panelRound12.setRoundBottomRight(5);
+        panelRound12.setRoundTopLeft(5);
+        panelRound12.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound12Layout = new javax.swing.GroupLayout(panelRound12);
+        panelRound12.setLayout(panelRound12Layout);
+        panelRound12Layout.setHorizontalGroup(
+            panelRound12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelRound12Layout.setVerticalGroup(
+            panelRound12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound13.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound13.setRoundBottomLeft(5);
+        panelRound13.setRoundBottomRight(5);
+        panelRound13.setRoundTopLeft(5);
+        panelRound13.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound13Layout = new javax.swing.GroupLayout(panelRound13);
+        panelRound13.setLayout(panelRound13Layout);
+        panelRound13Layout.setHorizontalGroup(
+            panelRound13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound13Layout.setVerticalGroup(
+            panelRound13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound14.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound14.setRoundBottomLeft(5);
+        panelRound14.setRoundBottomRight(5);
+        panelRound14.setRoundTopLeft(5);
+        panelRound14.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound14Layout = new javax.swing.GroupLayout(panelRound14);
+        panelRound14.setLayout(panelRound14Layout);
+        panelRound14Layout.setHorizontalGroup(
+            panelRound14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound14Layout.setVerticalGroup(
+            panelRound14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound15.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound15.setRoundBottomLeft(5);
+        panelRound15.setRoundBottomRight(5);
+        panelRound15.setRoundTopLeft(5);
+        panelRound15.setRoundTopRight(5);
+
+        javax.swing.GroupLayout panelRound15Layout = new javax.swing.GroupLayout(panelRound15);
+        panelRound15.setLayout(panelRound15Layout);
+        panelRound15Layout.setHorizontalGroup(
+            panelRound15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+        panelRound15Layout.setVerticalGroup(
+            panelRound15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 56, Short.MAX_VALUE)
+        );
+
+        panelRound16.setBackground(new java.awt.Color(243, 225, 122));
+        panelRound16.setRoundBottomLeft(5);
+        panelRound16.setRoundBottomRight(5);
+        panelRound16.setRoundTopLeft(5);
+        panelRound16.setRoundTopRight(5);
+
+        jLabel23.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Registrar");
+
+        javax.swing.GroupLayout panelRound16Layout = new javax.swing.GroupLayout(panelRound16);
+        panelRound16.setLayout(panelRound16Layout);
+        panelRound16Layout.setHorizontalGroup(
+            panelRound16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelRound16Layout.setVerticalGroup(
+            panelRound16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Placa");
 
         javax.swing.GroupLayout JPREGISTROSALIDALayout = new javax.swing.GroupLayout(JPREGISTROSALIDA);
         JPREGISTROSALIDA.setLayout(JPREGISTROSALIDALayout);
         JPREGISTROSALIDALayout.setHorizontalGroup(
             JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOREGISTROSALIDA)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(85, 85, 85)
+                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(panelRound11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel20)
+                                        .addComponent(panelRound14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel11))
+                                .addGap(83, 83, 83)
+                                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel19)
+                                    .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel21)
+                                        .addComponent(panelRound12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(panelRound13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(92, 92, Short.MAX_VALUE))
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addComponent(panelRound15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelRound16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160))))
         );
         JPREGISTROSALIDALayout.setVerticalGroup(
             JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLTITULOREGISTROSALIDA)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel17)
+                .addGap(37, 37, 37)
+                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelRound12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 49, 49)
+                .addComponent(jLabel22)
+                .addGroup(JPREGISTROSALIDALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(panelRound15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPREGISTROSALIDALayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(panelRound16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
-        JLTITULOHISTORIAL.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOHISTORIAL.setText("Historial de Registros");
+        JPHISTORIAL.setBackground(new java.awt.Color(240, 240, 240));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout JPHISTORIALLayout = new javax.swing.GroupLayout(JPHISTORIAL);
         JPHISTORIAL.setLayout(JPHISTORIALLayout);
         JPHISTORIALLayout.setHorizontalGroup(
             JPHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPHISTORIALLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOHISTORIAL)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGap(121, 121, 121)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         JPHISTORIALLayout.setVerticalGroup(
             JPHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPHISTORIALLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLTITULOHISTORIAL)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addGroup(JPHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPHISTORIALLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPHISTORIALLayout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
-        JPREPORTE.setBackground(new java.awt.Color(51, 51, 255));
+        JPREPORTE.setBackground(new java.awt.Color(240, 240, 240));
 
-        JLTITULOREPORTE.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOREPORTE.setText("Historial de Registros");
+        panelRound19.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound19.setRoundBottomLeft(25);
+        panelRound19.setRoundBottomRight(25);
+        panelRound19.setRoundTopLeft(25);
+        panelRound19.setRoundTopRight(25);
+
+        jLabel25.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel25.setText("Ganancias");
+
+        jLabel26.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel26.setText("Diarias");
+
+        javax.swing.GroupLayout panelRound19Layout = new javax.swing.GroupLayout(panelRound19);
+        panelRound19.setLayout(panelRound19Layout);
+        panelRound19Layout.setHorizontalGroup(
+            panelRound19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound19Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(panelRound19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+        panelRound19Layout.setVerticalGroup(
+            panelRound19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
+        panelRound20.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound20.setRoundBottomLeft(25);
+        panelRound20.setRoundBottomRight(25);
+        panelRound20.setRoundTopLeft(25);
+        panelRound20.setRoundTopRight(25);
+
+        jLabel27.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel27.setText("Ganancias");
+
+        jLabel28.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel28.setText("Diarias");
+
+        javax.swing.GroupLayout panelRound20Layout = new javax.swing.GroupLayout(panelRound20);
+        panelRound20.setLayout(panelRound20Layout);
+        panelRound20Layout.setHorizontalGroup(
+            panelRound20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound20Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(panelRound20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28))
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+        panelRound20Layout.setVerticalGroup(
+            panelRound20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
+        jLabel29.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Reporte de Ganancias");
 
         javax.swing.GroupLayout JPREPORTELayout = new javax.swing.GroupLayout(JPREPORTE);
         JPREPORTE.setLayout(JPREPORTELayout);
         JPREPORTELayout.setHorizontalGroup(
             JPREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREPORTELayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOREPORTE)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGap(82, 82, 82)
+                .addGroup(JPREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29)
+                    .addGroup(JPREPORTELayout.createSequentialGroup()
+                        .addComponent(panelRound19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)
+                        .addComponent(panelRound20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         JPREPORTELayout.setVerticalGroup(
             JPREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPREPORTELayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLTITULOREPORTE)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addGap(95, 95, 95)
+                .addGroup(JPREPORTELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelRound20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addComponent(jLabel29)
+                .addContainerGap(406, Short.MAX_VALUE))
         );
 
-        JPCONFIGURACION.setBackground(new java.awt.Color(255, 0, 0));
+        JPINICIO.setBackground(new java.awt.Color(240, 240, 240));
+        JPINICIO.setForeground(new java.awt.Color(0, 255, 102));
+        JPINICIO.setPreferredSize(new java.awt.Dimension(894, 800));
 
-        JLTITULOCONFIGURACION.setFont(new java.awt.Font("Consolas", 1, 40)); // NOI18N
-        JLTITULOCONFIGURACION.setText("Historial de Registros");
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("¡Bienvenido a Control Parking!");
 
-        javax.swing.GroupLayout JPCONFIGURACIONLayout = new javax.swing.GroupLayout(JPCONFIGURACION);
-        JPCONFIGURACION.setLayout(JPCONFIGURACIONLayout);
-        JPCONFIGURACIONLayout.setHorizontalGroup(
-            JPCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPCONFIGURACIONLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(JLTITULOCONFIGURACION)
-                .addContainerGap(347, Short.MAX_VALUE))
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Datos Generales");
+
+        panelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound1.setRoundBottomLeft(50);
+        panelRound1.setRoundBottomRight(50);
+        panelRound1.setRoundTopLeft(50);
+        panelRound1.setRoundTopRight(50);
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel1.setText("Hoy");
+
+        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
+        panelRound1.setLayout(panelRound1Layout);
+        panelRound1Layout.setHorizontalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addContainerGap(268, Short.MAX_VALUE))
         );
-        JPCONFIGURACIONLayout.setVerticalGroup(
-            JPCONFIGURACIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPCONFIGURACIONLayout.createSequentialGroup()
+        panelRound1Layout.setVerticalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JLTITULOCONFIGURACION)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelRound2.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound2.setRoundBottomLeft(50);
+        panelRound2.setRoundBottomRight(50);
+        panelRound2.setRoundTopLeft(50);
+        panelRound2.setRoundTopRight(50);
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel2.setText("Ingresos");
+
+        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
+        panelRound2.setLayout(panelRound2Layout);
+        panelRound2Layout.setHorizontalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addContainerGap(179, Short.MAX_VALUE))
+        );
+        panelRound2Layout.setVerticalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 1, 40)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Datos Generales");
+
+        panelRound7.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound7.setRoundBottomLeft(50);
+        panelRound7.setRoundBottomRight(50);
+        panelRound7.setRoundTopLeft(50);
+        panelRound7.setRoundTopRight(50);
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel3.setText("Ultimo Registro");
+
+        javax.swing.GroupLayout panelRound7Layout = new javax.swing.GroupLayout(panelRound7);
+        panelRound7.setLayout(panelRound7Layout);
+        panelRound7Layout.setHorizontalGroup(
+            panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound7Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel3)
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
+        panelRound7Layout.setVerticalGroup(
+            panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+
+        panelRound6.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound6.setRoundBottomLeft(50);
+        panelRound6.setRoundBottomRight(50);
+        panelRound6.setRoundTopLeft(50);
+        panelRound6.setRoundTopRight(50);
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel4.setText("Aforo");
+
+        javax.swing.GroupLayout panelRound6Layout = new javax.swing.GroupLayout(panelRound6);
+        panelRound6.setLayout(panelRound6Layout);
+        panelRound6Layout.setHorizontalGroup(
+            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound6Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel4)
+                .addContainerGap(241, Short.MAX_VALUE))
+        );
+        panelRound6Layout.setVerticalGroup(
+            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JPINICIOLayout = new javax.swing.GroupLayout(JPINICIO);
+        JPINICIO.setLayout(JPINICIOLayout);
+        JPINICIOLayout.setHorizontalGroup(
+            JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPINICIOLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPINICIOLayout.createSequentialGroup()
+                        .addGroup(JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPINICIOLayout.createSequentialGroup()
+                        .addGroup(JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPINICIOLayout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPINICIOLayout.createSequentialGroup()
+                                .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JPINICIOLayout.createSequentialGroup()
+                                .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25))))
+        );
+        JPINICIOLayout.setVerticalGroup(
+            JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPINICIOLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel5)
+                .addGap(70, 70, 70)
+                .addComponent(jLabel6)
+                .addGap(26, 26, 26)
+                .addGroup(JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(jLabel9)
+                .addGap(26, 26, 26)
+                .addGroup(JPINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JPBASEINTERFAZLayout = new javax.swing.GroupLayout(JPBASEINTERFAZ);
         JPBASEINTERFAZ.setLayout(JPBASEINTERFAZLayout);
         JPBASEINTERFAZLayout.setHorizontalGroup(
             JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JPINICIO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JPCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPREGISTROSALIDA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(JPREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPHISTORIAL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPREGISTROENTRADA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JPREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPBASEINTERFAZLayout.setVerticalGroup(
             JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JPINICIO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JPCONFIGURACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPREGISTROSALIDA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(JPREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPHISTORIAL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(JPREGISTROENTRADA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JPBASEINTERFAZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(JPREPORTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -665,7 +1376,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(JPBASEBOTONES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPBASEINTERFAZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JPBASEINTERFAZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -678,52 +1389,211 @@ public class Menu extends javax.swing.JFrame {
 
     private void JPBOTONINICIOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONINICIOMouseClicked
     JPINICIO.setVisible(true);
+    JPSUBMENUBOTONES.setVisible(false);    
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
     
+    JPBOTONINICIO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));  
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255));  
     }//GEN-LAST:event_JPBOTONINICIOMouseClicked
 
     private void JPBOTONREGISTROMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTROMouseClicked
-
+    JPSUBMENUBOTONES.setVisible(true); 
+    JPREGISTROENTRADA.setVisible(true); 
+    
+    JPMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROSALIDA.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPSUBBOTONREGISTRO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROENTRADA.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROSALIDA.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));   
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255)); 
     }//GEN-LAST:event_JPBOTONREGISTROMouseClicked
 
     private void JPBOTONHISTORIALMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONHISTORIALMouseClicked
-
+    JPHISTORIAL.setVisible(true);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPBOTONHISTORIAL.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));  
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255));  
     }//GEN-LAST:event_JPBOTONHISTORIALMouseClicked
 
     private void JPBOTONREPORTEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREPORTEMouseClicked
-
+    JPREPORTE.setVisible(true);
+    JPHISTORIAL.setVisible(false);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPBOTONREPORTE.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));      
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_JPBOTONREPORTEMouseClicked
 
     private void JPBOTONCONFIGURACIONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONCONFIGURACIONMouseClicked
-
+    JPCONFIGURACION.setVisible(true); 
+    JPREPORTE.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);   
+    
+    
+    JPBOTONCONFIGURACION.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));   
+    JPBOTONINICIO.setBackground(new Color(255,255,255)); 
     }//GEN-LAST:event_JPBOTONCONFIGURACIONMouseClicked
 
-    private void JPBOTONINICIO1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONINICIO1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONINICIO1MouseClicked
+    private void JPSUBBOTONINICIOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSUBBOTONINICIOMouseClicked
+    JPINICIO.setVisible(true);
+    JPMENUBOTONES.setVisible(true);    
+    JPSUBMENUBOTONES.setVisible(false);    
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPBOTONINICIO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));  
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255)); 
+    }//GEN-LAST:event_JPSUBBOTONINICIOMouseClicked
 
-    private void JPBOTONREGISTRO1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTRO1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONREGISTRO1MouseClicked
+    private void JPSUBBOTONREGISTROMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSUBBOTONREGISTROMouseClicked
+    JPSUBMENUBOTONES.setVisible(true); 
+    JPBOTONREGISTROENTRADA.setVisible(true); 
+    JPMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPSUBBOTONREGISTRO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROENTRADA.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROSALIDA.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));   
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255)); 
+    }//GEN-LAST:event_JPSUBBOTONREGISTROMouseClicked
 
-    private void JPBOTONHISTORIAL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONHISTORIAL1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONHISTORIAL1MouseClicked
+    private void JPSUBBOTONHISTORIALMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSUBBOTONHISTORIALMouseClicked
+    JPHISTORIAL.setVisible(true);
+    JPMENUBOTONES.setVisible(true);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPREPORTE.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPBOTONHISTORIAL.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));  
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255));  
+    }//GEN-LAST:event_JPSUBBOTONHISTORIALMouseClicked
 
-    private void JPBOTONREPORTE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREPORTE1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONREPORTE1MouseClicked
+    private void JPSUBBOTONREPORTEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSUBBOTONREPORTEMouseClicked
+    JPREPORTE.setVisible(true);
+    JPMENUBOTONES.setVisible(true);    
+    JPHISTORIAL.setVisible(false);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);
+    JPCONFIGURACION.setVisible(false);
+    
+    JPBOTONREPORTE.setBackground(new Color(243,225,122));
+    JPBOTONREGISTRO.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));      
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_JPSUBBOTONREPORTEMouseClicked
 
-    private void JPBOTONCONFIGURACION1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONCONFIGURACION1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONCONFIGURACION1MouseClicked
+    private void JPSUBBOTONCONFIGURACIONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPSUBBOTONCONFIGURACIONMouseClicked
+    JPCONFIGURACION.setVisible(true); 
+    JPREPORTE.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPSUBMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    JPREGISTROSALIDA.setVisible(false);  
+    }//GEN-LAST:event_JPSUBBOTONCONFIGURACIONMouseClicked
 
-    private void JPBOTONREGISTRO2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTRO2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONREGISTRO2MouseClicked
+    private void JPBOTONREGISTROENTRADAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTROENTRADAMouseClicked
+    JPREGISTROENTRADA.setVisible(true);
+    JPSUBMENUBOTONES.setVisible(true);     
+    JPMENUBOTONES.setVisible(false);    
+    JPREGISTROSALIDA.setVisible(false);  
+    JPCONFIGURACION.setVisible(false); 
+    JPREPORTE.setVisible(false);
+    JPHISTORIAL.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    
+    JPSUBBOTONREGISTRO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROENTRADA.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROSALIDA.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));   
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255)); 
+    }//GEN-LAST:event_JPBOTONREGISTROENTRADAMouseClicked
 
-    private void JPBOTONREGISTRO3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTRO3MouseClicked
+    private void JPBOTONREGISTROSALIDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JPBOTONREGISTROSALIDAMouseClicked
+    JPREGISTROSALIDA.setVisible(true);  
+    JPSUBMENUBOTONES.setVisible(true);      
+    JPCONFIGURACION.setVisible(false); 
+    JPREPORTE.setVisible(false);
+    JPHISTORIAL.setVisible(false);
+    JPMENUBOTONES.setVisible(false); 
+    JPINICIO.setVisible(false);  
+    JPREGISTROENTRADA.setVisible(false);
+    
+    JPSUBBOTONREGISTRO.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROSALIDA.setBackground(new Color(243,225,122));
+    JPBOTONREGISTROENTRADA.setBackground(new Color(255,255,255));
+    JPBOTONINICIO.setBackground(new Color(255,255,255));
+    JPBOTONHISTORIAL.setBackground(new Color(255,255,255));
+    JPBOTONREPORTE.setBackground(new Color(255,255,255));   
+    JPBOTONCONFIGURACION.setBackground(new Color(255,255,255)); 
+    }//GEN-LAST:event_JPBOTONREGISTROSALIDAMouseClicked
+
+    private void JLSUBBOTONREGISTRO1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLSUBBOTONREGISTRO1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_JPBOTONREGISTRO3MouseClicked
+    }//GEN-LAST:event_JLSUBBOTONREGISTRO1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -752,6 +1622,12 @@ public class Menu extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -762,26 +1638,27 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLTITULOCONFIGURACION;
-    private javax.swing.JLabel JLTITULOHISTORIAL;
-    private javax.swing.JLabel JLTITULOINICIO;
-    private javax.swing.JLabel JLTITULOREGISTROENTRADA;
-    private javax.swing.JLabel JLTITULOREGISTROSALIDA;
-    private javax.swing.JLabel JLTITULOREPORTE;
+    private javax.swing.JLabel JLBOTONCONFIGURACION;
+    private javax.swing.JLabel JLBOTONHISTORIAL;
+    private javax.swing.JLabel JLBOTONINICIO;
+    private javax.swing.JLabel JLBOTONREGISTRO;
+    private javax.swing.JLabel JLBOTONREPORTE;
+    private javax.swing.JLabel JLSUBBOTONCONFIGURACION;
+    private javax.swing.JLabel JLSUBBOTONHISTORIAL;
+    private javax.swing.JLabel JLSUBBOTONINICIO;
+    private javax.swing.JLabel JLSUBBOTONREGISTRO;
+    private javax.swing.JLabel JLSUBBOTONREGISTRO1;
+    private javax.swing.JLabel JLSUBBOTONREGISTRO3;
+    private javax.swing.JLabel JLSUBBOTONREPORTE;
     private javax.swing.JPanel JPBASEBOTONES;
     private javax.swing.JPanel JPBASEINTERFAZ;
     private javax.swing.JPanel JPBOTONCONFIGURACION;
-    private javax.swing.JPanel JPBOTONCONFIGURACION1;
     private javax.swing.JPanel JPBOTONHISTORIAL;
-    private javax.swing.JPanel JPBOTONHISTORIAL1;
     private javax.swing.JPanel JPBOTONINICIO;
-    private javax.swing.JPanel JPBOTONINICIO1;
     private javax.swing.JPanel JPBOTONREGISTRO;
-    private javax.swing.JPanel JPBOTONREGISTRO1;
-    private javax.swing.JPanel JPBOTONREGISTRO2;
-    private javax.swing.JPanel JPBOTONREGISTRO3;
+    private javax.swing.JPanel JPBOTONREGISTROENTRADA;
+    private javax.swing.JPanel JPBOTONREGISTROSALIDA;
     private javax.swing.JPanel JPBOTONREPORTE;
-    private javax.swing.JPanel JPBOTONREPORTE1;
     private javax.swing.JPanel JPCONFIGURACION;
     private javax.swing.JPanel JPHISTORIAL;
     private javax.swing.JPanel JPINICIO;
@@ -789,20 +1666,64 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel JPREGISTROENTRADA;
     private javax.swing.JPanel JPREGISTROSALIDA;
     private javax.swing.JPanel JPREPORTE;
+    private javax.swing.JPanel JPSUBBOTONCONFIGURACION;
+    private javax.swing.JPanel JPSUBBOTONHISTORIAL;
+    private javax.swing.JPanel JPSUBBOTONINICIO;
+    private javax.swing.JPanel JPSUBBOTONREGISTRO;
+    private javax.swing.JPanel JPSUBBOTONREPORTE;
     private javax.swing.JPanel JPSUBMENUBOTONES;
-    private javax.swing.JLabel jLabelCONFIGURACION;
-    private javax.swing.JLabel jLabelCONFIGURACION1;
-    private javax.swing.JLabel jLabelHISTORIAL;
-    private javax.swing.JLabel jLabelHISTORIAL1;
-    private javax.swing.JLabel jLabelINICIO;
-    private javax.swing.JLabel jLabelINICIO1;
-    private javax.swing.JLabel jLabelREGISTRO;
-    private javax.swing.JLabel jLabelREGISTRO1;
-    private javax.swing.JLabel jLabelREGISTRO2;
-    private javax.swing.JLabel jLabelREGISTRO3;
-    private javax.swing.JLabel jLabelREPORTE;
-    private javax.swing.JLabel jLabelREPORTE1;
-    private javax.swing.JLabel jLabelTITULOCPARKING;
-    private javax.swing.JLabel jLabelTITULOCPARKING1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelTITULOCPARKING2;
+    private javax.swing.JLabel jLabelTITULOCPARKING3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTable jTable1;
+    private gui.PanelRound panelRound1;
+    private gui.PanelRound panelRound11;
+    private gui.PanelRound panelRound12;
+    private gui.PanelRound panelRound13;
+    private gui.PanelRound panelRound14;
+    private gui.PanelRound panelRound15;
+    private gui.PanelRound panelRound16;
+    private gui.PanelRound panelRound17;
+    private gui.PanelRound panelRound18;
+    private gui.PanelRound panelRound19;
+    private gui.PanelRound panelRound2;
+    private gui.PanelRound panelRound20;
+    private gui.PanelRound panelRound21;
+    private gui.PanelRound panelRound22;
+    private gui.PanelRound panelRound23;
+    private gui.PanelRound panelRound24;
+    private gui.PanelRound panelRound6;
+    private gui.PanelRound panelRound7;
     // End of variables declaration//GEN-END:variables
 }
