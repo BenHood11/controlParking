@@ -4,12 +4,20 @@ import persistencia.ConexionBD;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-
+import iconos.Implementacion;
+import logica.Vehiculo;
+import logica.VehiculoDAO;
+        
 public class Main extends javax.swing.JFrame {
 
 
+    Implementacion icono = new Implementacion();
+            
     public Main() {
         initComponents();
+        // Iconos de Dashboard
+        icono.escalarLabel(iconInicio, "/iconos/house.png");
+        icono.escalarLabel(iconRegistro, "/iconos/clipboard .png");
         
         // Icono de Ventana
         setIconImage(new ImageIcon(getClass().getResource("/iconos/car.png")).getImage());
@@ -23,8 +31,10 @@ public class Main extends javax.swing.JFrame {
         jLabelTITULOCPARKING2 = new javax.swing.JLabel();
         JPBOTONINICIO = new javax.swing.JPanel();
         JLBOTONINICIO = new javax.swing.JLabel();
+        iconInicio = new javax.swing.JLabel();
         JPBOTONREGISTRO = new javax.swing.JPanel();
         JLBOTONREGISTRO = new javax.swing.JLabel();
+        iconRegistro = new javax.swing.JLabel();
         JPBOTONHISTORIAL = new javax.swing.JPanel();
         JLBOTONHISTORIAL = new javax.swing.JLabel();
         JPBOTONREPORTE = new javax.swing.JPanel();
@@ -71,6 +81,8 @@ public class Main extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         txtBuscarPor = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVehiculos = new javax.swing.JTable();
         JPREPORTE = new javax.swing.JPanel();
         panelBorde10 = new gui.PanelBorde();
         jLabel27 = new javax.swing.JLabel();
@@ -125,16 +137,22 @@ public class Main extends javax.swing.JFrame {
         JPBOTONINICIOLayout.setHorizontalGroup(
             JPBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPBOTONINICIOLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(34, 34, 34)
+                .addComponent(iconInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(JLBOTONINICIO)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         JPBOTONINICIOLayout.setVerticalGroup(
             JPBOTONINICIOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPBOTONINICIOLayout.createSequentialGroup()
+            .addGroup(JPBOTONINICIOLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JLBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(JLBOTONINICIO, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(JPBOTONINICIOLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(iconInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(JPBOTONINICIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
@@ -160,7 +178,10 @@ public class Main extends javax.swing.JFrame {
         JLBOTONREGISTRO.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         JLBOTONREGISTRO.setForeground(new java.awt.Color(0, 0, 0));
         JLBOTONREGISTRO.setText("Registro");
-        JPBOTONREGISTRO.add(JLBOTONREGISTRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 2, -1, 50));
+        JPBOTONREGISTRO.add(JLBOTONREGISTRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 50));
+
+        iconRegistro.setPreferredSize(new java.awt.Dimension(24, 24));
+        JPBOTONREGISTRO.add(iconRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 30, 30));
 
         jPanel1.add(JPBOTONREGISTRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 50));
 
@@ -607,6 +628,27 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        tblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Placa", "Propietario", "Categoria", "Marca"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblVehiculos);
+
         javax.swing.GroupLayout JPHISTORIALLayout = new javax.swing.GroupLayout(JPHISTORIAL);
         JPHISTORIAL.setLayout(JPHISTORIALLayout);
         JPHISTORIALLayout.setHorizontalGroup(
@@ -618,12 +660,15 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(JPHISTORIALLayout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtBuscarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnBuscar)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                        .addGroup(JPHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JPHISTORIALLayout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(txtBuscarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(btnBuscar)))))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         JPHISTORIALLayout.setVerticalGroup(
             JPHISTORIALLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,7 +684,9 @@ public class Main extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel11))
                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(651, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         JPTABINTERFAZ.addTab("tab3", JPHISTORIAL);
@@ -931,11 +978,40 @@ public class Main extends javax.swing.JFrame {
 
     private void btnRegistrarEntrada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEntrada1ActionPerformed
        
-    
+        String placa = txtPlacaEntrada.getText();
+        String propietario = txtPropietario.getText();
+        String marca = txtMarca.getText();
+        String modelo = txtModelo.getText();
+        String categoria = cboxCategoria.getSelectedItem().toString();
+
+        if (placa.isEmpty() || propietario.isEmpty() || marca.isEmpty() || modelo.isEmpty() || categoria.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Vehiculo vehiculo = new Vehiculo(placa, propietario, marca, modelo, categoria);
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+
+        if (vehiculoDAO.registrarVehiculo(vehiculo)) {
+            JOptionPane.showMessageDialog(this, "Vehículo registrado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            limpiarFormulario();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al registrar el vehículo.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void limpiarFormulario() {
+        txtPlacaEntrada.setText("");
+        txtPropietario.setText("");
+        txtMarca.setText("");
+        txtModelo.setText("");
+        cboxCategoria.setSelectedIndex(0);
     }//GEN-LAST:event_btnRegistrarEntrada1ActionPerformed
 
+    
     private void btnRegistrarSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSalidaActionPerformed
   
+        String placa = txtPlacaSalida.getText().trim();
     }//GEN-LAST:event_btnRegistrarSalidaActionPerformed
 
     /**
@@ -998,6 +1074,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarEntrada1;
     private javax.swing.JButton btnRegistrarSalida;
     private javax.swing.JComboBox<String> cboxCategoria;
+    private javax.swing.JLabel iconInicio;
+    private javax.swing.JLabel iconRegistro;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -1027,6 +1105,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelTITULOCPARKING2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFondoMenu;
     private javax.swing.JLabel lblPlacaObligatorio;
     private javax.swing.JLabel lblPropietarioObligatorio;
@@ -1036,6 +1115,7 @@ public class Main extends javax.swing.JFrame {
     private gui.PanelBorde panelBorde2;
     private gui.PanelBorde panelBorde3;
     private gui.PanelBorde panelBorde4;
+    private javax.swing.JTable tblVehiculos;
     private javax.swing.JTextField txtAforo;
     private javax.swing.JTextField txtBuscarPor;
     private javax.swing.JTextField txtMarca;
