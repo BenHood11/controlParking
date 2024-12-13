@@ -3,6 +3,7 @@ package gui;
 import iconos.Implementacion;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 public class PantallaCarga extends javax.swing.JFrame {
 
@@ -16,6 +17,19 @@ public class PantallaCarga extends javax.swing.JFrame {
         
         // Imagenes
         escalar.escalarLabel(icoCar, "/iconos/car.png");
+        
+        Timer timer = new Timer(1500, e -> {
+            // Cerrar la pantalla de carga
+            this.dispose();
+            
+            // Aquí se ejecuta la clase Main o la siguiente ventana
+            new Main().setVisible(true); // Cambia "Main" por la clase principal que deseas abrir
+        });
+        
+        // Iniciar el temporizador
+        timer.setRepeats(false); // Para que solo se ejecute una vez
+        timer.start();
+
     }
 
     /**
