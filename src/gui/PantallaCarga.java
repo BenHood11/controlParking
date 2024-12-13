@@ -1,6 +1,8 @@
 package gui;
 
 import iconos.Implementacion;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class PantallaCarga extends javax.swing.JFrame {
 
@@ -8,6 +10,11 @@ public class PantallaCarga extends javax.swing.JFrame {
     
     PantallaCarga() {
         initComponents();
+        
+        // Icono de Ventana
+        setIconImage(new ImageIcon(getClass().getResource("/iconos/car.png")).getImage());
+        
+        // Imagenes
         escalar.escalarLabel(icoCar, "/iconos/car.png");
     }
 
@@ -34,7 +41,7 @@ public class PantallaCarga extends javax.swing.JFrame {
         lblCreditos.setFont(new java.awt.Font("Verdana", 1, 30)); // NOI18N
         lblCreditos.setForeground(new java.awt.Color(30, 30, 30));
         lblCreditos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCreditos.setText("@GitCats - Tecsup, 2024");
+        lblCreditos.setText("@GitCats - 2024");
 
         lblParking.setFont(new java.awt.Font("Verdana", 1, 96)); // NOI18N
         lblParking.setForeground(new java.awt.Color(235, 205, 33));

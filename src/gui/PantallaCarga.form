@@ -86,7 +86,7 @@
               <Color blue="1e" green="1e" red="1e" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="@GitCats - Tecsup, 2024"/>
+            <Property name="text" type="java.lang.String" value="@GitCats - 2024"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblParking">
