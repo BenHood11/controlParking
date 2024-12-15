@@ -4,9 +4,13 @@ import persistencia.ConexionBD;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 import iconos.Implementacion;
 import logica.Vehiculo;
 import logica.VehiculoDAO;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
         
 public class Main extends javax.swing.JFrame {
 
@@ -15,6 +19,16 @@ public class Main extends javax.swing.JFrame {
             
     public Main() {
         initComponents();
+        
+        // Última placa
+        actualizarUltimaPlaca();
+        
+        // Fecha actual
+        establecerFechaActual();
+        
+        // Cargar vehículos en la tabla
+        cargarVehiculos();
+        
         // Iconos de Dashboard
         icono.escalarLabel(iconInicio, "/iconos/house.png");
         icono.escalarLabel(iconRegistro, "/iconos/clipboard .png");
@@ -22,6 +36,7 @@ public class Main extends javax.swing.JFrame {
         // Icono de Ventana
         setIconImage(new ImageIcon(getClass().getResource("/iconos/car.png")).getImage());
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -50,12 +65,16 @@ public class Main extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         panelBorde1 = new gui.PanelBorde();
         jLabel1 = new javax.swing.JLabel();
+        lblPlaca = new javax.swing.JLabel();
         panelBorde2 = new gui.PanelBorde();
         jLabel3 = new javax.swing.JLabel();
+        lblFechaHoy = new javax.swing.JLabel();
         panelBorde3 = new gui.PanelBorde();
         jLabel4 = new javax.swing.JLabel();
+        lblUltimoRegistro = new javax.swing.JLabel();
         panelBorde4 = new gui.PanelBorde();
         jLabel7 = new javax.swing.JLabel();
+        lblAforo = new javax.swing.JLabel();
         JPREGISTRO = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         txtPlacaEntrada = new javax.swing.JTextField();
@@ -339,6 +358,10 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(109, 109, 109));
         jLabel1.setText("Ingresos");
 
+        lblPlaca.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        lblPlaca.setForeground(new java.awt.Color(243, 225, 122));
+        lblPlaca.setText("jLabel8");
+
         javax.swing.GroupLayout panelBorde1Layout = new javax.swing.GroupLayout(panelBorde1);
         panelBorde1.setLayout(panelBorde1Layout);
         panelBorde1Layout.setHorizontalGroup(
@@ -346,14 +369,20 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelBorde1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorde1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPlaca)
+                .addGap(18, 18, 18))
         );
         panelBorde1Layout.setVerticalGroup(
             panelBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorde1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(lblPlaca)
+                .addContainerGap())
         );
 
         JPINICIO.add(panelBorde1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, -1));
@@ -369,6 +398,10 @@ public class Main extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(109, 109, 109));
         jLabel3.setText("Hoy");
 
+        lblFechaHoy.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        lblFechaHoy.setForeground(new java.awt.Color(243, 225, 122));
+        lblFechaHoy.setText("jLabel8");
+
         javax.swing.GroupLayout panelBorde2Layout = new javax.swing.GroupLayout(panelBorde2);
         panelBorde2.setLayout(panelBorde2Layout);
         panelBorde2Layout.setHorizontalGroup(
@@ -377,13 +410,19 @@ public class Main extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel3)
                 .addContainerGap(274, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorde2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblFechaHoy)
+                .addGap(14, 14, 14))
         );
         panelBorde2Layout.setVerticalGroup(
             panelBorde2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorde2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(lblFechaHoy)
+                .addContainerGap())
         );
 
         JPINICIO.add(panelBorde2, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 171, -1, -1));
@@ -399,6 +438,10 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(109, 109, 109));
         jLabel4.setText("Ultimo Registro");
 
+        lblUltimoRegistro.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        lblUltimoRegistro.setForeground(new java.awt.Color(243, 225, 122));
+        lblUltimoRegistro.setText("jLabel8");
+
         javax.swing.GroupLayout panelBorde3Layout = new javax.swing.GroupLayout(panelBorde3);
         panelBorde3.setLayout(panelBorde3Layout);
         panelBorde3Layout.setHorizontalGroup(
@@ -406,14 +449,20 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelBorde3Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorde3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblUltimoRegistro)
+                .addGap(16, 16, 16))
         );
         panelBorde3Layout.setVerticalGroup(
             panelBorde3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorde3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(lblUltimoRegistro)
+                .addContainerGap())
         );
 
         JPINICIO.add(panelBorde3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
@@ -429,6 +478,10 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(109, 109, 109));
         jLabel7.setText("Aforo");
 
+        lblAforo.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        lblAforo.setForeground(new java.awt.Color(243, 225, 122));
+        lblAforo.setText("jLabel8");
+
         javax.swing.GroupLayout panelBorde4Layout = new javax.swing.GroupLayout(panelBorde4);
         panelBorde4.setLayout(panelBorde4Layout);
         panelBorde4Layout.setHorizontalGroup(
@@ -436,14 +489,20 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelBorde4Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel7)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorde4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAforo)
+                .addGap(19, 19, 19))
         );
         panelBorde4Layout.setVerticalGroup(
             panelBorde4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorde4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(lblAforo)
+                .addContainerGap())
         );
 
         JPINICIO.add(panelBorde4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
@@ -994,12 +1053,15 @@ public class Main extends javax.swing.JFrame {
 
         if (vehiculoDAO.registrarVehiculo(vehiculo)) {
             JOptionPane.showMessageDialog(this, "Vehículo registrado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            lblUltimoRegistro.setText(  placa);
+            actualizarUltimaPlaca();
+            cargarVehiculos(); 
             limpiarFormulario();
         } else {
             JOptionPane.showMessageDialog(this, "Error al registrar el vehículo.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    
     private void limpiarFormulario() {
         txtPlacaEntrada.setText("");
         txtPropietario.setText("");
@@ -1008,12 +1070,45 @@ public class Main extends javax.swing.JFrame {
         cboxCategoria.setSelectedIndex(0);
     }//GEN-LAST:event_btnRegistrarEntrada1ActionPerformed
 
-    
     private void btnRegistrarSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSalidaActionPerformed
   
         String placa = txtPlacaSalida.getText().trim();
     }//GEN-LAST:event_btnRegistrarSalidaActionPerformed
 
+    private void establecerFechaActual() {
+        Date fechaActual = new Date(); 
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy"); 
+        String fechaFormateada = formatoFecha.format(fechaActual); 
+        lblFechaHoy.setText(fechaFormateada);
+    }
+    
+    private void actualizarUltimaPlaca() {
+    VehiculoDAO vehiculoDAO = new VehiculoDAO();
+    String ultimaPlaca = vehiculoDAO.obtenerUltimaPlacaRegistrada();
+    lblUltimoRegistro.setText((ultimaPlaca.isEmpty() ? "Ninguna" : ultimaPlaca));
+}
+    private void cargarVehiculos() {
+    VehiculoDAO vehiculoDAO = new VehiculoDAO();
+    List<Vehiculo> vehiculos = vehiculoDAO.obtenerVehiculos();
+    
+    // Obtener el modelo de la tabla (asumiendo que ya has creado el modelo para la tabla)
+    DefaultTableModel model = (DefaultTableModel) tblVehiculos.getModel();
+    
+    // Limpiar la tabla antes de agregar nuevos datos
+    model.setRowCount(0);
+    
+    // Recorrer la lista de vehículos y agregar una fila a la tabla por cada vehículo
+    for (Vehiculo vehiculo : vehiculos) {
+        model.addRow(new Object[]{
+            vehiculo.getPlaca(),
+            vehiculo.getPropietario(),
+            vehiculo.getMarca(),
+            vehiculo.getCategoria()
+        });
+    }
+}
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1106,9 +1201,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTITULOCPARKING2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAforo;
+    private javax.swing.JLabel lblFechaHoy;
     private javax.swing.JLabel lblFondoMenu;
+    private javax.swing.JLabel lblPlaca;
     private javax.swing.JLabel lblPlacaObligatorio;
     private javax.swing.JLabel lblPropietarioObligatorio;
+    private javax.swing.JLabel lblUltimoRegistro;
     private gui.PanelBorde panelBorde1;
     private gui.PanelBorde panelBorde10;
     private gui.PanelBorde panelBorde11;

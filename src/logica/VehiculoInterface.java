@@ -8,5 +8,5 @@ package logica;
 public interface VehiculoInterface {
     
     boolean registrarVehiculo(Vehiculo vehiculo);
-    
+               
 }
