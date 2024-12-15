@@ -26,9 +26,6 @@ public class Main extends javax.swing.JFrame {
         // Fecha actual
         establecerFechaActual();
         
-        // Cargar vehículos en la tabla
-        cargarVehiculos();
-        
         // Iconos de Dashboard
         icono.escalarLabel(iconInicio, "/iconos/house.png");
         icono.escalarLabel(iconRegistro, "/iconos/clipboard .png");
@@ -1055,7 +1052,6 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vehículo registrado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             lblUltimoRegistro.setText(  placa);
             actualizarUltimaPlaca();
-            cargarVehiculos(); 
             limpiarFormulario();
         } else {
             JOptionPane.showMessageDialog(this, "Error al registrar el vehículo.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1086,28 +1082,7 @@ public class Main extends javax.swing.JFrame {
     VehiculoDAO vehiculoDAO = new VehiculoDAO();
     String ultimaPlaca = vehiculoDAO.obtenerUltimaPlacaRegistrada();
     lblUltimoRegistro.setText((ultimaPlaca.isEmpty() ? "Ninguna" : ultimaPlaca));
-}
-    private void cargarVehiculos() {
-    VehiculoDAO vehiculoDAO = new VehiculoDAO();
-    List<Vehiculo> vehiculos = vehiculoDAO.obtenerVehiculos();
-    
-    // Obtener el modelo de la tabla (asumiendo que ya has creado el modelo para la tabla)
-    DefaultTableModel model = (DefaultTableModel) tblVehiculos.getModel();
-    
-    // Limpiar la tabla antes de agregar nuevos datos
-    model.setRowCount(0);
-    
-    // Recorrer la lista de vehículos y agregar una fila a la tabla por cada vehículo
-    for (Vehiculo vehiculo : vehiculos) {
-        model.addRow(new Object[]{
-            vehiculo.getPlaca(),
-            vehiculo.getPropietario(),
-            vehiculo.getMarca(),
-            vehiculo.getCategoria()
-        });
-    }
-}
-    
+}   
     
     /**
      * @param args the command line arguments
